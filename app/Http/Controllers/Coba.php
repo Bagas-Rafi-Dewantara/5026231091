@@ -11,4 +11,14 @@ class Coba extends Controller
     {
         return view('blog');
     }
+
+    public function index(){
+        $nama = "Diki Alfarabi Hadi";
+        $umur = 35;
+        $alamat = "Surabaya";
+        $pelajaran = ["Algoritma & Pemrograman","Kalkulus","Pemrograman Web"];
+    	return view('biodata',['nama' => $nama, 'usia' => $umur, 'alamat' => $alamat, 'pelajaran' => $pelajaran]);
+        //pake controller jika paramter lebih dari satu daripada route route untuk simpel
+        // ['nama' => $nama, ....] ini kyk set variabelnya dipisahkan oleh koma
+    }
 }
