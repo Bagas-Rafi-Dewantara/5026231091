@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Coba;
 use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\PegawaiDBController;
 
 /*
 |--------------------------------------------------------------------------
@@ -87,7 +88,7 @@ Route::get('hello',[Coba::class,'helloworld']);
 Route::get('dosen',[Coba::class,'index']);
 
 //route pegawai
-Route::get('/pegawai/{nama}', [PegawaiController::class,'index']);
+// Route::get('/pegawai/{nama}', [PegawaiController::class,'index']);
 
 //route formulir
 Route::get('/formulir', [PegawaiController::class, 'formulir']); //halaman isian form
@@ -97,3 +98,6 @@ Route::post('/formulir/proses', [PegawaiController::class, 'proses']); //action 
 Route::get('/blog', [BlogController::class, 'home']);
 Route::get('/blog/tentang', [BlogController::class, 'tentang']);
 Route::get('/blog/kontak', [BlogController::class, 'kontak']);
+
+//route Pegawai DB
+Route::get('/pegawai', [PegawaiDBController::class,'index']);
