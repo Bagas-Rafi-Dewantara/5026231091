@@ -5,6 +5,7 @@ use App\Http\Controllers\Coba;
 use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\PegawaiDBController;
+use App\Http\Controllers\SnackController;
 
 /*
 |--------------------------------------------------------------------------
@@ -112,3 +113,12 @@ Route::get('/pegawai/cari', [PegawaiDBController::class,'cari']);
 // Route::get('/template', function () {
 // 	return view('template');
 // });
+
+//route Snack
+Route::get('/snack', [SnackController::class,'index']);
+Route::get('/snack/tambah', [SnackController::class,'tambah']);
+Route::post('/snack/store', [SnackController::class,'store']);
+Route::get('/snack/edit/{id}', [SnackController::class,'edit']);
+Route::post('/snack/update', [SnackController::class,'update']);
+Route::get('/snack/hapus/{id}', [SnackController::class,'hapus']);
+Route::get('/snack/cari', [SnackController::class,'cari']);
