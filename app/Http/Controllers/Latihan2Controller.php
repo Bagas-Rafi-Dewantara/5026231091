@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class Latihan1Controller extends Controller
+class Latihan2Controller extends Controller
 {
     //
     public function index()
@@ -15,7 +15,7 @@ class Latihan1Controller extends Controller
         $keranjangbelanja = DB::table('keranjangbelanja')->paginate(10);
 
     	// mengirim data keranjang ke view index
-        return view('index3',['keranjangbelanja' => $keranjangbelanja]);
+        return view('indexlat2',['keranjangbelanja' => $keranjangbelanja]);
 
     }
 
@@ -24,7 +24,7 @@ class Latihan1Controller extends Controller
     {
 
         // memanggil view tambah
-        return view('tambah');
+        return view('tambahlat2');
     }
 
     // method untuk insert data ke table keranjang
@@ -37,19 +37,10 @@ class Latihan1Controller extends Controller
             'harga' => $request->harga
         ]);
         // alihkan halaman ke halaman keranjang
-        return redirect('/keranjangbelanja');
+        return redirect('/latihan2');
     }
 
-    /* public function proses(Request $request)
-    {
-    $this->validate($request,[
-        'nama' => 'required|min:5|max:20',
-        'pekerjaan' => 'required',
-        'usia' => 'required|numeric'
-    ]);
 
-    return view('proses',['data' => $request]);
-    } */
 
     // method untuk edit data keranjang
     public function edit($id) // ada primary key
@@ -65,38 +56,24 @@ class Latihan1Controller extends Controller
     public function update(Request $request)
     {
         // update data keranjang
-        DB::table('keranjangbelanja')->where('keranjangbelanja_ID',$request->id)->update([
+        DB::table('keranjangbelanja')->where('id',$request->id)->update([
             'kodebarang' => $request->kode,
             'jumlah' => $request->jumlah,
             'harga' => $request->harga
         ]);
         // alihkan halaman ke halaman keranjang
-        return redirect('/keranjangbelanja');
+        return redirect('/latihan2');
     }
 
     // method untuk hapus data keranjang
     public function hapus($id)
     {
         // menghapus data keranjang berdasarkan id yang dipilih
-        DB::table('keranjangbelanja')->where('keranjangbelanja_ID',$id)->delete();
+        DB::table('keranjangbelanja')->where('id',$id)->delete();
 
         // alihkan halaman ke halaman keranjang
-        return redirect('/keranjangbelanja');
+        return redirect('/latihan2');
     }
 
-    // method untuk mencari keranjang
-    // public function cari(Request $request)
-	// {
-	// 	// menangkap data pencarian
-	// 	$cari = $request->cari;
 
-    // 		// mengambil data dari table keranjang sesuai pencarian data
-	// 	$keranjang = DB::table('keranjang')
-	// 	->where('kodebarang','like',"%".$cari."%")
-	// 	->paginate();
-
-    // 		// mengirim data keranjang ke view index
-	// 	return view('index3',['keranjang' => $keranjang]);
-
-	// }
 }

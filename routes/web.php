@@ -7,6 +7,8 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\PegawaiDBController;
 use App\Http\Controllers\SnackController;
 use App\Http\Controllers\Latihan1Controller;
+use App\Http\Controllers\Latihan2Controller;
+use App\Http\Controllers\Latihan3Controller;
 
 /*
 |--------------------------------------------------------------------------
@@ -127,3 +129,22 @@ Route::get('/snack/cari', [SnackController::class,'cari']);
 
 //latihan 1
 Route::get('/latihan1', [Latihan1Controller::class,'index']);
+
+//Latihan 2
+Route::get('/latihan2', [Latihan2Controller::class,'index']);
+Route::get('/latihan2/tambah', [Latihan2Controller::class,'tambah']);
+Route::post('/latihan2/store', [Latihan2Controller::class,'store']);
+Route::get('/latihan2/edit/{id}', [Latihan2Controller::class,'edit']);
+Route::post('/latihan2/update', [Latihan2Controller::class,'update']);
+Route::get('/latihan2/hapus/{id}', [Latihan2Controller::class,'hapus']);
+
+
+//Latihan 3
+Route::get('/latihan3', [Latihan3Controller::class,'index']);
+Route::get('/latihan3/tambah', [Latihan3Controller::class,'tambah']);
+Route::post('/latihan3/store', [Latihan3Controller::class,'store']);
+Route::get('/latihan3/edit/{id}', [Latihan3Controller::class,'edit']);
+Route::post('/latihan3/update', [Latihan3Controller::class,'update']);
+Route::get('/latihan3/hapus/{id}', [Latihan3Controller::class,'hapus']);
+
+
