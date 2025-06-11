@@ -6,6 +6,7 @@ use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\PegawaiDBController;
 use App\Http\Controllers\SnackController;
+use App\Http\Controllers\Latihan1Controller;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +28,7 @@ Route::get('/', function () {
 Route::get('/selamat', function () {
     return view('welcome');
 });
+
 
 Route::get('halo', function () {
 	return "<h1>Halo, Selamat datang di tutorial laravel www.malasngoding.com</h1>";
@@ -122,3 +124,6 @@ Route::get('/snack/edit/{id}', [SnackController::class,'edit']);
 Route::post('/snack/update', [SnackController::class,'update']);
 Route::get('/snack/hapus/{id}', [SnackController::class,'hapus']);
 Route::get('/snack/cari', [SnackController::class,'cari']);
+
+//latihan 1
+Route::get('/latihan1', [Latihan1Controller::class,'index']);
