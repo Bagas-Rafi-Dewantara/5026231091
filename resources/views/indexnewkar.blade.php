@@ -22,7 +22,7 @@
                 <td>{{ $k->pangkat }}</td>
                 <td>Rp {{ number_format($k->gaji, 0, ',', '.') }}</td>
                 <td>
-                    <a href="/latihan3/hapus/{{ $k->NIP }}" class="btn btn-danger">Hapus Data</a>
+                    <a href="/newkaryawan/hapus/{{ $k->NIP }}" class="btn btn-danger">Hapus Data</a>
                 </td>
             </tr>
         @endforeach
