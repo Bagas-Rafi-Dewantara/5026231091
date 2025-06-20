@@ -9,6 +9,7 @@ use App\Http\Controllers\SnackController;
 use App\Http\Controllers\Latihan1Controller;
 use App\Http\Controllers\Latihan2Controller;
 use App\Http\Controllers\Latihan3Controller;
+use App\Http\Controllers\NewKaryawanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -106,7 +107,9 @@ Route::get('/blog/kontak', [BlogController::class, 'kontak']);
 
 //route Pegawai DB
 Route::get('/pegawai', [PegawaiDBController::class,'index']);
+// Ketika URL '/pegawai/tambah' diakses dengan metode GET, method 'tambah' di PegawaiDBController akan dijalankan
 Route::get('/pegawai/tambah', [PegawaiDBController::class,'tambah']);
+// Ketika URL '/pegawai/store' diakses dengan metode POST, method 'store' di PegawaiDBController akan dijalankan
 Route::post('/pegawai/store', [PegawaiDBController::class,'store']);
 Route::get('/pegawai/edit/{id}', [PegawaiDBController::class,'edit']);
 Route::post('/pegawai/update', [PegawaiDBController::class,'update']);
@@ -147,4 +150,10 @@ Route::get('/latihan3/edit/{id}', [Latihan3Controller::class,'edit']);
 Route::post('/latihan3/update', [Latihan3Controller::class,'update']);
 Route::get('/latihan3/hapus/{id}', [Latihan3Controller::class,'hapus']);
 
-
+//EAS
+Route::get('/newkaryawan', [NewKaryawanController::class,'index']);
+Route::get('/newkaryawan/tambah', [NewKaryawanController::class,'tambah']);
+Route::post('/newkaryawan/store', [NewKaryawanController::class,'store']);
+Route::get('/newkaryawan/edit/{id}', [NewKaryawanController::class,'edit']);
+Route::post('/newkaryawan/update', [NewKaryawanController::class,'update']);
+Route::get('/newkaryawan/hapus/{id}', [NewKaryawanController::class,'hapus']);

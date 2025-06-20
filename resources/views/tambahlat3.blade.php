@@ -48,7 +48,7 @@
             </div>
         </div>
 
-        <a href="/karyawan" class="btn btn-info"> Kembali</a>
+        <a href="/latihan3" class="btn btn-info"> Kembali</a>
 
         <input type="submit" value="SIMPAN" class="btn btn-success">
     </form>

@@ -10,12 +10,14 @@
 
     <form action="/pegawai/store" method="post" class="form-horizontal">
         {{ csrf_field() }}
+        {{--adalah helper Blade yang menghasilkan input hidden dengan token CSRF. Ini adalah fitur keamanan penting di Laravel untuk mencegah serangan Cross-Site Request Forgery. --}}
 
         <div class="form-group has-success">
             <label class="control-label col-sm-2" for="nama">
                 Nama
             </label>
             <div class="col-sm-6">
+                {{-- name itu digunain untuk nama yang buat masukinnya --}}
                 <input class="form-control" type="text" id="nama" placeholder="Masukkan Nama Lengkap" name="nama"
                     required="required">
             </div>

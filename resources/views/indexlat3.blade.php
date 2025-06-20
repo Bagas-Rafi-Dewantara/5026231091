@@ -27,8 +27,4 @@
     </table>
 
     <a href="/latihan3/tambah" class="btn btn-primary btn-block"> Tambah Data</a>
-
-    <div class="mt-4">
-        {{ $karyawan->links() }}
-    </div>
 @endsection

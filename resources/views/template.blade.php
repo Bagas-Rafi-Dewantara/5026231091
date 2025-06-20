@@ -36,7 +36,7 @@
                 <a class="nav-link" href="/snack">Tugas CRUD</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">EAS</a>
+                <a class="nav-link" href="/newkaryawan">EAS</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/latihan1">Latihan 1</a>

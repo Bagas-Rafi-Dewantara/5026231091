@@ -12,7 +12,7 @@ class Latihan2Controller extends Controller
     {
         // mengambil data dari table keranjang
         //$keranjang = DB::table('keranjang')->get(); //array all record
-        $keranjangbelanja = DB::table('keranjangbelanja')->paginate(10);
+        $keranjangbelanja = DB::table('keranjangbelanja')->get();
 
     	// mengirim data keranjang ke view index
         return view('indexlat2',['keranjangbelanja' => $keranjangbelanja]);

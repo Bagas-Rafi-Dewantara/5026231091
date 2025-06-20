@@ -2,6 +2,7 @@
 @section('content')
 
 	<h3>Keranjang Belanja</h3>
+    <a href="/latihan2/tambah" class="btn btn-success">Beli</a>
     <br/><br/>
 
 	<table class="table table-stripped">
@@ -20,14 +21,12 @@
 			<td>{{ $p->jumlah }}</td>
 			<td>Rp {{ number_format($p->harga, 0, ',', '.') }}</td>
 			<td>Rp {{ number_format($p->jumlah * $p->harga, 0, ',', '.') }}</td>
+            //menambahkan Rp, format angka : 0 desimal dibelakang koma, dan titik untuk ribuan
 			<td>
-				<a href="/latihan2/tambah" class="btn btn-success">Beli</a>
-				|
 				<a href="/latihan2/hapus/{{ $p->id }}" class="btn btn-danger">Batal</a>
 			</td>
 		</tr>
 		@endforeach
 	</table>
-    {{ $keranjangbelanja->links()}}
 
 @endsection
